@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Incontournables du dessin</title>
     <style>
-        /* --- STYLE GENERAL --- */
+        /* --- STYLES INSPIRÉS DE PAGE_INSCRIPTION --- */
         :root {
-            --bg-color: #0f1115;
-            --card-bg: #181c24;
-            --text-color: #f3f4f6;
-            --text-muted: #9ca3af;
-            --primary-color: #ff4747;
-            --primary-hover: #e03636;
-            --border-color: #262c3a;
+            --bg-color: #0b0c10;       /* Fond sombre principal */
+            --card-bg: #1f2833;        /* Fond des blocs et de la boîte de prix */
+            --text-color: #ffffff;     /* Texte principal blanc */
+            --text-muted: #c5a059;     /* Texte secondaire/or discret ou gris clair */
+            --text-gray: #a9b2c3;
+            --primary-color: #45f3ff;   /* Turquoise brillant pour les titres de modules */
+            --cta-color: #25d366;       /* Vert flashy pour l'appel à l'action principal */
+            --cta-hover: #20ba5a;
+            --border-color: #2f3b4c;
         }
 
         * {
@@ -47,7 +49,7 @@
         .lang-btn {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            color: var(--text-muted);
+            color: var(--text-gray);
             padding: 6px 12px;
             border-radius: 4px;
             cursor: pointer;
@@ -58,12 +60,19 @@
 
         .lang-btn.active {
             background: var(--primary-color);
-            color: #fff;
+            color: #000;
             border-color: var(--primary-color);
         }
 
-        [lang="en"] {
+        /* Gestion de l'affichage initial */
+        .lang-en {
             display: none;
+        }
+        .lang-fr {
+            display: block;
+        }
+        span.lang-fr {
+            display: inline-block;
         }
 
         /* --- STRUCTURE HERO --- */
@@ -92,7 +101,7 @@
 
         .hero-left .badge {
             display: inline-block;
-            background-color: rgba(255, 71, 71, 0.15);
+            background-color: rgba(69, 243, 255, 0.1);
             color: var(--primary-color);
             padding: 6px 12px;
             border-radius: 20px;
@@ -104,7 +113,7 @@
 
         .hero-left p {
             font-size: 1.2rem;
-            color: var(--text-muted);
+            color: var(--text-gray);
             margin-bottom: 30px;
         }
 
@@ -117,7 +126,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             margin-bottom: 40px;
         }
 
@@ -146,7 +155,7 @@
 
         .price-label {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--text-gray);
             text-transform: uppercase;
             font-weight: 600;
         }
@@ -166,30 +175,31 @@
 
         .tax-mention {
             font-size: 1rem;
-            color: var(--text-muted);
+            color: var(--text-gray);
             font-weight: 500;
         }
 
         .cta-button {
             display: block;
             width: 100%;
-            background-color: var(--primary-color);
+            background-color: var(--cta-color);
             color: #fff;
             text-align: center;
-            padding: 16px 24px;
+            padding: 18px 24px;
             border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
             text-decoration: none;
-            transition: background 0.2s;
-            box-shadow: 0 4px 15px rgba(255, 71, 71, 0.3);
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
             margin-bottom: 20px;
             border: none;
             cursor: pointer;
         }
 
         .cta-button:hover {
-            background-color: var(--primary-hover);
+            background-color: var(--cta-hover);
+            transform: translateY(-1px);
         }
 
         .features-list {
@@ -210,7 +220,7 @@
 
         .features-list li::before {
             content: "✓";
-            color: #10b981;
+            color: var(--primary-color);
             font-weight: bold;
         }
 
@@ -246,7 +256,7 @@
 
         .module-card p {
             font-size: 0.95rem;
-            color: var(--text-muted);
+            color: var(--text-gray);
         }
     </style>
 </head>
@@ -262,74 +272,153 @@
         <div class="hero">
             
             <div class="hero-left">
-                <span class="badge" lang="fr">Les bases essentielles</span>
-                <span class="badge" lang="en">Essential Basics</span>
+                <span class="badge lang-fr">Les bases essentielles</span>
+                <span class="badge lang-en">Essential Basics</span>
                 
-                <h1 lang="fr">Incontournables du dessin</h1>
-                <h1 lang="en">Drawing Basics</h1>
+                <h1 class="lang-fr">Incontournables du dessin</h1>
+                <h1 class="lang-en">Drawing Basics</h1>
                 
-                <p lang="fr">Apprends à reconnaître les formes primaires ! Ce cours est conçu pour t'enseigner les compétences essentielles afin de dessiner tout ce que tu veux.<br><br>Oui, oui ! Que ce soit de reproduire ce que tu vois ou bien créer directement de ton imagination... TOUT !</p>
-                <p lang="en">Learn to recognize primary shapes! This course is designed to teach you the essential skills to draw anything you want.<br><br>Yes, really! Whether it's reproducing what you see or creating directly from your imagination... EVERYTHING!</p>
+                <p class="lang-fr">Apprends à reconnaître les formes primaires ! Ce cours est conçu pour t'enseigner les compétences essentielles afin de dessiner tout ce que tu veux.<br><br>Oui, oui ! Que ce soit de reproduire ce que tu vois ou bien créer directement de ton imagination... TOUT !</p>
+                <p class="lang-en">Learn to recognize primary shapes! This course is designed to teach you the essential skills to draw anything you want.<br><br>Yes, really! Whether it's reproducing what you see or creating directly from your imagination... EVERYTHING!</p>
                 
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/3uEtdDvK6Xo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <div class="curriculum-section">
-                    <h2 lang="fr">Ce que tu apprendras</h2>
-                    <h2 lang="en">What you will learn</h2>
+                    <h2 class="lang-fr">Ce que tu apprendras</h2>
+                    <h2 class="lang-en">What you will learn</h2>
                     
                     <div class="module-card">
-                        <h3 lang="fr">01. Les bonnes lignes</h3>
-                        <p lang="fr">Tu développeras davantage ta motricité fine. C'est elle qui te permettra d'avoir un contrôle total sur tes lignes et tracés pour tous tes dessins.</p>
-                        <h3 lang="en">01. Great Lines</h3>
-                        <p lang="en">You will further develop your fine motor skills. This is what will allow you to have total control over your lines and strokes for all your drawings.</p>
+                        <h3 class="lang-fr">01. Les bonnes lignes</h3>
+                        <p class="lang-fr">Tu développeras davantage ta motricité fine. C'est elle qui te permettra d'avoir un contrôle total sur tes lignes et tracés pour tous tes dessins.</p>
+                        <h3 class="lang-en">01. Great Lines</h3>
+                        <p class="lang-en">You will further develop your fine motor skills. This is what will allow you to have total control over your lines and strokes for all your drawings.</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">02. L'utilisation du ruban</h3>
-                        <p lang="fr">Pas besoin d'attendre, ici, tu apprendras ta première technique : Le ruban ! Celle-ci te permettra de créer sans effort, c'est comme un code de triche dans ton jeu vidéo préféré mais pour le dessin.</p>
-                        <h3 lang="en">02. Using the Ribbon</h3>
-                        <p lang="en">No need to wait, here you will learn your very first technique: The ribbon! This will allow you to create effortlessly—it's like a cheat code in your favorite video game but for drawing.</p>
+                        <h3 class="lang-fr">02. L'utilisation du ruban</h3>
+                        <p class="lang-fr">Pas besoin d'attendre, ici, tu apprendras ta première technique : Le ruban ! Celle-ci te permettra de créer sans effort, c'est comme un code de triche dans ton jeu vidéo préféré mais pour le dessin.</p>
+                        <h3 class="lang-en">02. Using the Ribbon</h3>
+                        <p class="lang-en">No need to wait, here you will learn your very first technique: The ribbon! This will allow you to create effortlessly—it's like a cheat code in your favorite video game but for drawing.</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">03. Dessiner les formes de bases</h3>
-                        <p lang="fr">Y a pas mieux que d'être capable de dessiner n'importe quelle forme primaire. Elles te serviront pour la plupart de tes créations. Apprendre à les reconnaître dans tout est une astuce indispensable !</p>
-                        <h3 lang="en">03. Drawing Basic Shapes</h3>
-                        <p lang="en">There's nothing better than being able to draw any primary shape. They will serve you well for most of your creations. Learning to recognize them in everything is an indispensable trick!</p>
+                        <h3 class="lang-fr">03. Dessiner les formes de bases</h3>
+                        <p class="lang-fr">Y a pas mieux que d'être capable de dessiner n'importe quelle forme primaire. Elles te serviront pour la plupart de tes créations. Apprendre à les reconnaître dans tout est une astuce indispensable !</p>
+                        <h3 class="lang-en">03. Drawing Basic Shapes</h3>
+                        <p class="lang-en">There's nothing better than being able to draw any primary shape. They will serve you well for most of your creations. Learning to recognize them in everything is an indispensable trick!</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">04. Dessiner des objets simples en 2D (2 dimensions)</h3>
-                        <p lang="fr">Ici, tu apprendras à quel point il est facile de dessiner les objets qui te viennent en tête. Avec ce que tu as vu dans les chapitres précédents, ce sera hyper facile pour toi.</p>
-                        <h3 lang="en">04. Drawing Simple Objects in 2D (2 Dimensions)</h3>
-                        <p lang="en">Here, you will learn how easy it is to draw objects that pop into your head. With what you've seen in previous chapters, this will be super easy for you.</p>
+                        <h3 class="lang-fr">04. Dessiner des objets simples en 2D (2 dimensions)</h3>
+                        <p class="lang-fr">Ici, tu apprendras à quel point il est facile de dessiner les objets qui te viennent en tête. Avec ce que tu as vu dans les chapitres précédents, ce sera hyper facile pour toi.</p>
+                        <h3 class="lang-en">04. Drawing Simple Objects in 2D (2 Dimensions)</h3>
+                        <p class="lang-en">Here, you will learn how easy it is to draw objects that pop into your head. With what you've seen in previous chapters, this will be super easy for you.</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">05. Dessiner la nature</h3>
-                        <p lang="fr">Après les objets, tu apprendras à faire l'ajout des bonnes lignes et tracés pour dessiner n'importe quel objet qui se trouve dans la nature. Un arbre, un ruisseau, des montagnes etc.</p>
-                        <h3 lang="en">05. Drawing Nature</h3>
-                        <p lang="en">After objects, you will learn how to add the right lines and strokes to draw any object found in nature. A tree, a stream, mountains, etc.</p>
+                        <h3 class="lang-fr">05. Dessiner la nature</h3>
+                        <p class="lang-fr">Après les objets, tu apprendras à faire l'ajout des bonnes lignes et tracés pour dessiner n'importe quel objet qui se trouve dans la nature. Un arbre, un ruisseau, des montagnes etc.</p>
+                        <h3 class="lang-en">05. Drawing Nature</h3>
+                        <p class="lang-en">After objects, you will learn how to add the right lines and strokes to draw any object found in nature. A tree, a stream, mountains, etc.</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">06. Insectes et animaux</h3>
-                        <p lang="fr">Quand on dit nature, on parle aussi de ce qui s'y cache ! Tu pourras appliquer les techniques apprises pour ajouter de la vie dans tes dessins de nature. Comme une araignée par exemple.</p>
-                        <h3 lang="en">06. Insects and Animals</h3>
-                        <p lang="en">When we say nature, we also mean what hides in it! You can apply the learned techniques to add life to your nature drawings. Like a spider, for example.</p>
+                        <h3 class="lang-fr">06. Insectes et animaux</h3>
+                        <p class="lang-fr">Quand on dit nature, on parle aussi de ce qui s'y cache ! Tu pourras appliquer les techniques apprises pour ajouter de la vie dans tes dessins de nature. Comme une araignée par exemple.</p>
+                        <h3 class="lang-en">06. Insects and Animals</h3>
+                        <p class="lang-en">When we say nature, we also mean what hides in it! You can apply the learned techniques to add life to your nature drawings. Like a spider, for example.</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">07. Dessiner les parties d'un personnage</h3>
-                        <p lang="fr">Dans ce chapitre, tu apprendras à faire les différentes parties d'un personnage simple et tu pratiqueras le dessin du style bande dessinée. C'est quoi ce style ? Et bien le meilleur exemple serait Garfield. Tu apprendras à faire des pieds et mains, des yeux expressifs, des postures drôles etc.</p>
-                        <h3 lang="en">07. Drawing Character Parts</h3>
-                        <p lang="en">In this chapter, you will learn to make different parts of a simple character and practice cartoon/comic strip style. What is this style? Well, the best example would be Garfield. You'll learn to make feet, hands, expressive eyes, funny poses, etc.</p>
+                        <h3 class="lang-fr">07. Dessiner les parties d'un personnage</h3>
+                        <p class="lang-fr">Dans ce chapitre, tu apprendras à faire les différentes parties d'un personnage simple et tu pratiqueras le dessin du style bande dessinée. C'est quoi ce style ? Et bien le meilleur exemple serait Garfield. Tu apprendras à faire des pieds et mains, des yeux expressifs, des postures drôles etc.</p>
+                        <h3 class="lang-en">07. Drawing Character Parts</h3>
+                        <p class="lang-en">In this chapter, you will learn to make different parts of a simple character and practice cartoon/comic strip style. What is this style? Well, the best example would be Garfield. You'll learn to make feet, hands, expressive eyes, funny poses, etc.</p>
                     </div>
 
                     <div class="module-card">
-                        <h3 lang="fr">08. Dessiner un personnage simple</h3>
-                        <p lang="fr">Ici, tu dessineras un personnage complet ! Tu apprendras à faire un croquis et comment t'en servir pour faire le rendu final de ton dessin.</p>
-                        <h3 lang="en">08. Drawing a Simple Character</h3>
-                        <p lang="en">Here, you will draw a complete character! You will learn how to make a sketch and how to use it to create the final render of your drawing.</p>
+                        <h3 class="lang-fr">08. Dessiner un personnage simple</h3>
+                        <p class="lang-fr">Ici, tu dessineras un personnage complet ! Tu apprendras à faire un croquis et comment t'en servir pour faire le rendu final de ton dessin.</p>
+                        <h3 lang="en" class="lang-en">08. Drawing a Simple Character</h3>
+                        <p class="lang-en">Here, you will draw a complete character! You will learn how to make a sketch and how to use it to create the final render of your drawing.</p>
+                    </div>
+
+                    <div class="module-card">
+                        <h3 class="lang-fr">09. Faire une bande dessinée</h3>
+                        <p class="lang-fr">Il est temps pour toi de créer ta propre bande dessinée avec le personnage que tu as fait au dernier chapitre. En laissant de belles bulles pour les paroles, si tu en as.</p>
+                        <h3 class="lang-en">09. Making a Comic Strip</h3>
+                        <p class="lang-en">It's time for you to create your own comic strip with the character you made in the last chapter. Remember to leave nice speech bubbles for dialogue, if you have any.</p>
+                    </div>
+
+                    <div class="module-card">
+                        <h3 class="lang-fr">10. Coloration de ta bande dessinée</h3>
+                        <p class="lang-fr">On met tout ça en couleur, mais pas n'importe comment. Tu vas apprendre les différents moyens pour donner de la profondeur à tes images !</p>
+                        <h3 class="lang-en">10. Coloring Your Comic Strip</h3>
+                        <p class="lang-en">Let's put some color on all of this, but not just any way. You will learn different methods to bring depth to your images!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="checkout-box">
+                    <div class="price-wrapper">
+                        <span class="price-label lang-fr">Accès unique à vie</span>
+                        <span class="price-label lang-en">One-time Lifetime Access</span>
+                        <div class="price-flex">
+                            <span class="current-price">50 $</span>
+                            <span class="tax-mention lang-fr">+ taxes</span>
+                            <span class="tax-mention lang-en">+ taxes</span>
+                        </div>
+                    </div>
+
+                    <a id="cta-link-fr" href="https://dessineavecben.systeme.io/pageinfostitch" class="cta-button lang-fr">Écouter la vidéo gratuite</a>
+                    <a id="cta-link-en" href="https://dessineavecben.systeme.io/pageinfostitch" class="cta-button lang-en">Watch the Free Video</a>
+
+                    <ul class="features-list lang-fr">
+                        <li>10 modules asynchrones pour apprendre à son rythme</li>
+                        <li>Idéal pour maîtriser les bases avant les cours en direct</li>
+                        <li>Développe l'autonomie et la motricité fine</li>
+                        <li>Accès à vie sécurisé 24h/24, 7j/7</li>
+                    </ul>
+                    
+                    <ul class="features-list lang-en">
+                        <li>10 self-paced asynchronous modules</li>
+                        <li>Perfect to master the basics before live classes</li>
+                        <li>Boosts autonomy & fine motor skills</li>
+                        <li>100% Secure lifetime access 24/7</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            const frElements = document.querySelectorAll('.lang-fr');
+            const enElements = document.querySelectorAll('.lang-en');
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            if (lang === 'fr') {
+                frElements.forEach(el => {
+                    if(el.tagName === 'SPAN') el.style.display = 'inline-block';
+                    else el.style.display = 'block';
+                });
+                enElements.forEach(el => el.style.display = 'none');
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                enElements.forEach(el => {
+                    if(el.tagName === 'SPAN') el.style.display = 'inline-block';
+                    else el.style.display = 'block';
+                });
+                frElements.forEach(el => el.style.display = 'none');
+                buttons[1].classList.add('active');
+                buttons[0].classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
